@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, use } from 'react'
+import { useState, useEffect, useRef} from 'react'
 import { useDashboardStore } from '../../store/dashboardStore'
 import { Play, Pause, RotateCcw, SkipForward } from 'lucide-react'
 
@@ -19,23 +19,6 @@ export function PomodoroWidget() {
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
   const [isSettingsOpen, setIsSettingsOpen] = useState(false)
   const [customWorkDuration, setCustomWorkDuration] = useState(25)
-
-  // useEffect(() => {
-  //   if (pomodoro.isRunning) {
-  //     intervalRef.current = setInterval(() => {
-  //       tickPomodoro()
-  //     }, 1000)
-  //   } else if (intervalRef.current) {
-  //     clearInterval(intervalRef.current)
-  //     intervalRef.current = null
-  //   }
-
-  //   return () => {
-  //     if (intervalRef.current) {
-  //       clearInterval(intervalRef.current)
-  //     }
-  //   }
-  // }, [pomodoro.isRunning, tickPomodoro])
 
   useEffect(() => {
     var timeout: ReturnType<typeof setTimeout> | null = null;
